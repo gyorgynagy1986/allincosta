@@ -714,21 +714,6 @@ button:focus {
         }
     }
 
-    // &.scrolled .links .nav-item {
-    //     color: white;
-
-    //     &:hover {
-    //         color: white;
-    //     }
-
-    //     &::after {
-    //         background-color: white;
-    //     }
-
-    //     svg path {
-    //         stroke: white;
-    //     }
-    // }
 
     .buttons {
         display: flex;

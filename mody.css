@@ -1,0 +1,14 @@
+.mody-index-item-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.mody-faq-ul {
+  max-width: 950px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
