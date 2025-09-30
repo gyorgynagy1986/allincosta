@@ -4,11 +4,58 @@
   justify-content: center;
 }
 
-
 .mody-faq-ul {
   max-width: 950px;
   margin: 0 auto;
   padding-left: 1rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.mody-about-new-section {
+  width: 100% !important;
+  padding: 0 !important;
+  height: 700px;
+  position: relative;
+  background-color: aqua;
+}
+
+.image-new-secton {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Mody specifikus stílusok */
+.mody-flex-content {
+  display: flex;
+  align-items: center; /* Középre igazítja a képet a szöveg magasságához képest */
+  gap: 2rem; /* Távolság a kép és a szöveg között */
+}
+
+.mody-left-side {
+  flex: 0 0 auto; /* A kép nem nyúlik vagy zsugorodik */
+}
+
+.mody-right-side {
+  flex: 1; /* A szöveg rész foglalja el a maradék helyet */
+}
+
+.mody-left-side img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Reverse layout a második szekcióhoz */
+.mody-flex-content.mody-reverse {
+  flex-direction: row-reverse;
+}
+
+/* Reszponzív mobil nézet */
+@media (max-width: 768px) {
+  .mody-flex-content,
+  .mody-flex-content.mody-reverse {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
