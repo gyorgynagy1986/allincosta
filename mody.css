@@ -60,7 +60,6 @@
   }
 }
 
-
 /* Form spacing fixes */
 form .form-group {
   margin-bottom: 1rem;
@@ -102,4 +101,62 @@ form button.primary-link {
   margin-top: 0.5rem;
 }
 
+.logo-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 4vw 0px 4vw;
+}
+
+.vision-container {
+  padding: 4rem 4vw !important;
+}
+
+.image-container {
+  padding-top: 4rem;
+  width: 100%;
+}
+
+.vision-flex {
+  display: flex;
+  gap: 24px;
+}
+
+.vision-flex h2 {
+  font-size: 2rem;
+}
+
+.mission-box,
+.vision-box {
+  flex: 1;
+  background-color: #f5f1ec;
+  border-radius: 10px;
+  box-shadow: 2px 4px 20px 4px #c8c9c932;
+  padding: 32px;
+}
+
+/* Mobilon egymás alatt */
+@media (max-width: 768px) {
+  .vision-flex {
+    flex-direction: column;
+  }
+  .vision-flex h2 {
+    font-size: 1.7rem;
+  }
+
+  .image-new-secton {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.image-container {
+ padding-left: 4vw;
+ padding-right: 4vw;
+}
+
+}
 
