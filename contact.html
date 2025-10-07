@@ -435,7 +435,7 @@
                 style="display: none"
               >
                 <select id="ideal_location" name="ideal_location">
-                  <option value="">Ideal location in Costa del Sol</option>
+                  <option value="">location in Costa del Sol (optional)</option>
                   <option value="marbella">Marbella</option>
                   <option value="estepona">Estepona</option>
                   <option value="malaga">Málaga</option>
@@ -452,7 +452,7 @@
                 </select>
 
                 <div class="form-group">
-                  <label>Select individual services:</label>
+                  <label>Select your individual service(s):</label>
                   <div class="form-check">
                     <input
                       type="checkbox"
@@ -502,9 +502,23 @@
                       value="general"
                     />
                     <label for="service_general"
-                      >General Life Assistance Services</label
+                      > Life Assistance Services</label
                     >
                   </div>
+
+                    <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="service_general"
+                      class="form-check-input"
+                      name="customer_services"
+                      value="general"
+                    />
+                    <label for="service_general"
+                      > Community services</label
+                    >
+                  </div>
+
                   <div class="form-check">
                     <input
                       type="checkbox"
@@ -783,17 +797,6 @@
                   >I would like to receive updates, news, and special offers
                   from ALLinCOSTA.</label
                 >
-              </div>
-
-              <div class="form-check">
-                <input
-                  type="checkbox"
-                  id="captcha"
-                  name="captcha"
-                  class="form-check-input"
-                  required
-                />
-                <label for="captcha">I'm not a robot. *</label>
               </div>
 
               <button type="submit" class="primary-link" title="Send">
