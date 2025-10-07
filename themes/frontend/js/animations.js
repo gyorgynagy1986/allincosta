@@ -517,3 +517,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 });
+
+
+
+// Accordion functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const accordionTriggers = document.querySelectorAll('.accordion-trigger');
+  
+  accordionTriggers.forEach(trigger => {
+    trigger.addEventListener('click', function() {
+      const targetId = this.getAttribute('data-target');
+      const content = document.getElementById(targetId);
+      const icon = this.querySelector('.accordion-icon');
+      
+      // Toggle content visibility
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'block';
+        icon.textContent = '−';
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        content.style.display = 'none';
+        icon.textContent = '+';
+        icon.style.transform = 'rotate(0deg)';
+      }
+    });
+  });
+});

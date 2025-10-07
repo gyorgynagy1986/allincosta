@@ -405,32 +405,70 @@
 
       <!-- Financial Support Section -->
       <section class="small-content" style="padding-top: 40px">
-        <div class="container">
-          <!-- Non-Resident Individual Mortgage -->
+  <div class="container">
+    <!-- Fő accordion trigger -->
+    <div
+      class="accordion-trigger"
+      style="
+        background-color: #289da4;
+        color: white;
+        border-radius: 10px;
+        padding: 20px 40px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 2px 4px 20px 4px rgba(200, 201, 201, 0.2);
+      "
+      data-target="financial-support-main"
+    >
+      <p style="margin-bottom: 0; font-size: 1.5rem; font-weight: 500">
+        Financial support in Spain
+      </p>
+      <span class="accordion-icon" style="font-size: 1.5rem; transition: transform 0.3s">+</span>
+    </div>
+
+    <!-- Fő accordion content -->
+    <div id="financial-support-main" class="accordion-content" style="display: none">
+      <!-- Non-Resident Individual Mortgage -->
+      <div style="margin-bottom: 20px">
+        <div
+          class="accordion-trigger"
+          style="
+            background-color: #f5f1ec;
+            border-radius: 10px;
+            padding: 20px 40px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 2px 4px 20px 4px rgba(200, 201, 201, 0.2);
+          "
+          data-target="non-resident-mortgage"
+        >
+          <h3
+            style="
+              color: #289da4;
+              margin-bottom: 0;
+              text-transform: uppercase;
+            "
+          >
+            1. Non-Resident Individual Mortgage
+          </h3>
+          <span class="accordion-icon" style="font-size: 1.5rem; transition: transform 0.3s">+</span>
+        </div>
+
+        <div id="non-resident-mortgage" class="accordion-content" style="display: none">
           <div
             style="
               background-color: #f5f1ec;
               border-radius: 10px;
               padding: 40px;
-              margin-bottom: 40px;
+              margin-top: 10px;
               box-shadow: 2px 4px 20px 4px rgba(200, 201, 201, 0.2);
             "
           >
-            <div style="border-radius: 8px; margin: 1.5rem 0">
-              <p style="margin-bottom: 0; font-size: 1.5rem; font-weight: 500">
-                Financial support in Spain
-              </p>
-            </div>
-
-            <h3
-              style="
-                color: #289da4;
-                margin-bottom: 1.5rem;
-                text-transform: uppercase;
-              "
-            >
-              1. Non-Resident Individual Mortgage
-            </h3>
             <p style="line-height: 1.8; margin-bottom: 2rem">
               Foreign individuals (non-residents) can get a mortgage in Spain.
             </p>
@@ -468,26 +506,47 @@
               <li>Spanish bank account</li>
             </ul>
           </div>
+        </div>
+      </div>
 
-          <!-- Foreign Company Mortgage -->
+      <!-- Foreign Company Mortgage -->
+      <div style="margin-bottom: 20px">
+        <div
+          class="accordion-trigger"
+          style="
+            background-color: #f5f1ec;
+            border-radius: 10px;
+            padding: 20px 40px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 2px 4px 20px 4px rgba(200, 201, 201, 0.2);
+          "
+          data-target="foreign-company-mortgage"
+        >
+          <h3
+            style="
+              color: #289da4;
+              margin-bottom: 0;
+              text-transform: uppercase;
+            "
+          >
+            2. Foreign Company Mortgage
+          </h3>
+          <span class="accordion-icon" style="font-size: 1.5rem; transition: transform 0.3s">+</span>
+        </div>
+
+        <div id="foreign-company-mortgage" class="accordion-content" style="display: none">
           <div
             style="
               background-color: #f5f1ec;
               border-radius: 10px;
               padding: 40px;
-              margin-bottom: 40px;
+              margin-top: 10px;
               box-shadow: 2px 4px 20px 4px rgba(200, 201, 201, 0.2);
             "
           >
-            <h3
-              style="
-                color: #289da4;
-                margin-bottom: 1.5rem;
-                text-transform: uppercase;
-              "
-            >
-              2. Foreign Company Mortgage
-            </h3>
             <p style="line-height: 1.8; margin-bottom: 2rem">
               Foreign companies can apply for a mortgage in Spain, but it is
               more complicated:
@@ -523,7 +582,10 @@
             </ul>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
       <!-- Contentplus név: Steps -->
       <section class="steps">
