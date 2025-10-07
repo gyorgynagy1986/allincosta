@@ -160,3 +160,10 @@ form button.primary-link {
 
 }
 
+.fancy {
+  margin-bottom: 0rem !important;
+}
+
+.even-more {
+  margin-bottom: 1rem;
+}
