@@ -66,6 +66,11 @@ form .form-group {
   width: 100%;
 }
 
+/* Form spacing fixes */
+form {
+  gap: 0 !important;
+}
+
 form .form-group label:not(.form-check label) {
   display: block;
   text-align: left;
@@ -151,13 +156,12 @@ form button.primary-link {
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-}
+  }
 
-.image-container {
- padding-left: 4vw;
- padding-right: 4vw;
-}
-
+  .image-container {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
 }
 
 .fancy {

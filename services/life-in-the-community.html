@@ -87,6 +87,7 @@
     ></script>
     <script src="../themes/frontend/js/animations.js"></script>
     <script src="../themes/frontend/js/script.js"></script>
+    <script defer src="../themes/frontend/js/sendEmail.js"></script>
   </head>
 
   <body>
@@ -307,7 +308,7 @@
         </div>
       </section>
 
-      <section style="padding-top: 3rem;" class="steps">
+      <section style="padding-top: 3rem" class="steps">
         <div class="container">
           <h2 style="margin-bottom: 2rem">
             Main Steps to Set Up Your Life in the Community
@@ -827,10 +828,12 @@
           <div class="flex-content">
             <div class="left side infos">
               <p>
-                We're here to help you in Costa del Sol! <br />Got questions or
-                need assistance? Reach out via the form, phone, or email — we're
-                happy to hear from you and respond as soon as possible.
+                We're here to help you in Costa del Sol!
+                <br />Have questions or need assistance? <br />
+                Reach out to us via contact form or email. We're happy to hear
+                from you and respond as soon as possible within 48 hours.
               </p>
+
               <div class="socials">
                 <a href="" target="_blank" title="Facebook">
                   <svg
@@ -913,26 +916,414 @@
                 referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
-            <form class="right side" action="">
-              <h3>Get in touch:</h3>
-              <input type="text" name="" placeholder="Name" required />
-              <input type="text" name="" placeholder="Country" required />
-              <input
-                class="half"
-                type="email"
-                name=""
-                placeholder="Email address"
-                required
-              />
-              <input
-                class="half"
-                type="phone"
-                name=""
-                placeholder="Phone number"
-                required
-                oninput="this.value=this.value.replace(/[^0-9+]/g,'');"
-              />
-              <textarea rows="4" placeholder="Message"></textarea>
+            <form class="right side modern-form" action="" id="mainForm">
+              <h3>Get in touch</h3>
+
+              <!-- Select form type -->
+              <div class="form-group">
+                <label for="formType"
+                  >I am a: <span class="required">*</span></label
+                >
+                <select id="formType" name="formType" required>
+                  <option value="">-- Please select your category --</option>
+                  <option value="customer">Customer</option>
+                  <option value="partner">Partner</option>
+                  <option value="community">Community</option>
+                </select>
+              </div>
+
+              <!-- COMMON FIELDS -->
+              <div style="margin-bottom: 0" id="commonFields">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Name *"
+                  required
+                />
+
+                <!-- Country: csak Customer esetén lesz látható és required -->
+                <input
+                  class="half"
+                  type="text"
+                  id="country"
+                  name="country"
+                  placeholder="Country *"
+                  aria-hidden="true"
+                  style="display: none"
+                />
+
+                <input
+                  class="half"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email address *"
+                  required
+                />
+                <input
+                  class="half"
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Mobile number *"
+                  required
+                  oninput="this.value=this.value.replace(/[^0-9+]/g,'');"
+                />
+              </div>
+
+              <!-- CUSTOMER FORM -->
+              <div
+                id="customerFields"
+                class="conditional-fields"
+                style="display: none"
+              >
+                <input
+                  class="half"
+                  type="tel"
+                  id="country"
+                  name="country"
+                  placeholder="Country"
+                />
+                <select id="ideal_location" name="ideal_location">
+                  <option value="">location in Costa del Sol (optional)</option>
+                  <option value="marbella">Marbella</option>
+                  <option value="estepona">Estepona</option>
+                  <option value="malaga">Málaga</option>
+                  <option value="fuengirola">Fuengirola</option>
+                  <option value="benalmadena">Benalmádena</option>
+                  <option value="torremolinos">Torremolinos</option>
+                  <option value="mijas">Mijas</option>
+                  <option value="nerja">Nerja</option>
+                  <option value="torrox">Torrox</option>
+                  <option value="manilva">Manilva</option>
+                  <option value="casares">Casares</option>
+                  <option value="sotogrande">Sotogrande</option>
+                  <option value="other">Other</option>
+                </select>
+
+                <!-- Count: csak Customer esetén látható és required -->
+                <div class="form-group">
+                  <label for="count"
+                    >Count <span class="required">*</span></label
+                  >
+                  <input
+                    type="number"
+                    id="count"
+                    name="count"
+                    placeholder="Count *"
+                    min="1"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label>Select your individual service(s):</label>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="service_property"
+                      class="form-check-input"
+                      name="customer_services"
+                      value="property"
+                    />
+                    <label for="service_property">Property Assistance</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="service_car"
+                      class="form-check-input"
+                      name="customer_services"
+                      value="car"
+                    />
+                    <label for="service_car">Car Assistance</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="service_tax"
+                      class="form-check-input"
+                      name="customer_services"
+                      value="tax"
+                    />
+                    <label for="service_tax">Tax Services</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="service_business"
+                      class="form-check-input"
+                      name="customer_services"
+                      value="business"
+                    />
+                    <label for="service_business">Business Services</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="service_general"
+                      class="form-check-input"
+                      name="customer_services"
+                      value="general"
+                    />
+                    <label for="service_general"
+                      >Life Assistance Services</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="service_general2"
+                      class="form-check-input"
+                      name="customer_services"
+                      value="general"
+                    />
+                    <label for="service_general2">Community services</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="service_other"
+                      class="form-check-input"
+                      name="customer_services"
+                      value="other"
+                    />
+                    <label for="service_other">Other Services</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PARTNER FORM -->
+              <div
+                id="partnerFields"
+                class="conditional-fields"
+                style="display: none"
+              >
+                <input
+                  type="text"
+                  id="company_name"
+                  name="company_name"
+                  placeholder="Company name *"
+                  required
+                />
+                <input
+                  type="text"
+                  id="office_locations"
+                  name="office_locations"
+                  placeholder="Office location(s) *"
+                  required
+                />
+                <textarea
+                  id="business_service"
+                  name="business_service"
+                  rows="3"
+                  placeholder="Business service *"
+                  required
+                ></textarea>
+                <textarea
+                  id="why_select"
+                  name="why_select"
+                  rows="3"
+                  placeholder="Why should we select you as a qualified partner of ALLinCOSTA? *"
+                  required
+                ></textarea>
+                <textarea
+                  id="benefit"
+                  name="benefit"
+                  rows="3"
+                  placeholder="Which benefit are you bringing to ALLinCOSTA? *"
+                  required
+                ></textarea>
+              </div>
+
+              <!-- COMMUNITY FORM -->
+              <div
+                id="communityFields"
+                class="conditional-fields"
+                style="display: none"
+              >
+                <input
+                  type="text"
+                  id="community_name"
+                  name="community_name"
+                  placeholder="Name of the community *"
+                  required
+                />
+                <input
+                  type="text"
+                  id="president_name"
+                  name="president_name"
+                  placeholder="Name of the president"
+                />
+                <input
+                  class="half"
+                  type="text"
+                  id="location"
+                  name="location"
+                  placeholder="Location *"
+                  required
+                />
+                <input
+                  class="half"
+                  type="number"
+                  id="units"
+                  name="units"
+                  placeholder="Number of units  *"
+                  min="1"
+                  required
+                />
+
+                <div class="form-group">
+                  <label
+                    >Community status: <span class="required">*</span></label
+                  >
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="new_community"
+                      class="form-check-input"
+                      name="new_community"
+                      value="service_providers"
+                    />
+                    <label for="new_community">New community</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="established_community"
+                      class="form-check-input"
+                      name="established_community"
+                      value="service_providers"
+                    />
+                    <label for="established_community"
+                      >Established community</label
+                    >
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Selected service(s):</label>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="comm_administrator"
+                      class="form-check-input"
+                      name="community_services"
+                      value="administrator"
+                    />
+                    <label for="comm_administrator">Administrator</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="comm_providers"
+                      class="form-check-input"
+                      name="community_services"
+                      value="service_providers"
+                    />
+                    <label for="comm_providers"
+                      >Service Providers (cleaning, gardening, pool,
+                      maintenance)</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="comm_security"
+                      class="form-check-input"
+                      name="community_services"
+                      value="security"
+                    />
+                    <label for="comm_security">Security Camera System</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="comm_insurances"
+                      class="form-check-input"
+                      name="community_services"
+                      value="insurances"
+                    />
+                    <label for="comm_insurances">Insurances</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="comm_utility"
+                      class="form-check-input"
+                      name="community_services"
+                      value="utility"
+                    />
+                    <label for="comm_utility">Utility Service</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="comm_property_mgmt"
+                      class="form-check-input"
+                      name="community_services"
+                      value="property_mgmt"
+                    />
+                    <label for="comm_property_mgmt"
+                      >Property Management Service</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="comm_solar"
+                      class="form-check-input"
+                      name="community_services"
+                      value="solar"
+                    />
+                    <label for="comm_solar">Solar System</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="comm_water"
+                      class="form-check-input"
+                      name="community_services"
+                      value="water_softener"
+                    />
+                    <label for="comm_water">Water Softener System</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="comm_gym"
+                      class="form-check-input"
+                      name="community_services"
+                      value="gym"
+                    />
+                    <label for="comm_gym">Gym Equipment and Maintenance</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="comm_advisor"
+                      class="form-check-input"
+                      name="community_services"
+                      value="advisor"
+                    />
+                    <label for="comm_advisor"
+                      >Community Management Advisor Service</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="comm_other"
+                      class="form-check-input"
+                      name="community_services"
+                      value="other"
+                    />
+                    <label for="comm_other">Other Services</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- GDPR -->
               <div class="form-check">
                 <input
                   type="checkbox"
@@ -942,18 +1333,22 @@
                   required
                 />
                 <label for="gdpr"
-                  >I consent to the processing of my personal data by the
-                  website operator in accordance with the privacy policy.</label
+                  >I consent to the processing of my personal data by ALLinCOSTA
+                  in accordance with the Privacy Policy. *</label
                 >
               </div>
+
               <div class="form-check">
                 <input
                   type="checkbox"
-                  id="captcha"
-                  name="captcha"
+                  id="marketing"
+                  name="marketing"
                   class="form-check-input"
                 />
-                <label for="captcha">I'm not a robot.</label>
+                <label for="marketing"
+                  >I would like to receive updates, news, and special offers
+                  from ALLinCOSTA.</label
+                >
               </div>
               <button type="submit" class="primary-link" title="Send">
                 Send
