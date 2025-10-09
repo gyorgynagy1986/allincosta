@@ -3172,3 +3172,27 @@ section.list {
     max-width: 1140px;
   }
 }
+
+
+.socials {
+  display: flex;
+  gap: 10px;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #000; /* fekete kör */
+  color: #fff; /* fehér ikon */
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.socials a:hover {
+  background-color: #23B0BA; /* opcionális hover szín */
+  transform: scale(1.1);
+}
