@@ -3196,3 +3196,8 @@ section.list {
   background-color: #23B0BA; /* opcionális hover szín */
   transform: scale(1.1);
 }
+
+.mody-policy {
+  text-decoration: underline !important;
+  
+} 

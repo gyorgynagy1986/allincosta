@@ -304,7 +304,10 @@
 
           <div class="deals-grid">
             <!-- Deal 1: Luxury Sea View Property -->
-            <div class="deal-card">
+            <div class="deal-card featured">
+              <div class="featured-badge dont-miss-out-badge">
+                Don't Miss Out
+              </div>
               <div class="deal-number">01</div>
               <h3>Luxury Panoramic Sea View Property</h3>
               <p>
@@ -313,9 +316,10 @@
                 this exclusive luxury property.
               </p>
               <a
-                href="/coming-soon.html"
+                href="/pdf/deal-1.pdf"
                 class="primary-link blue"
                 title="More info"
+                target="_blank"
                 >MORE INFO</a
               >
             </div>
@@ -332,9 +336,10 @@
                 Ready to start construction immediately.
               </p>
               <a
-                href="/coming-soon.html"
+                href="/pdf/deal-2.pdf"
                 class="primary-link blue"
                 title="More info"
+                target="_blank"
                 >MORE INFO</a
               >
             </div>
@@ -354,9 +359,10 @@
                 <li>Pre-launch price: 11,000 EUR reservation fee</li>
               </ul>
               <a
-                href="/coming-soon.html"
+                href="/pdf/deal-3.pdf"
                 class="primary-link blue"
                 title="More info"
+                target="_blank"
                 >MORE INFO</a
               >
             </div>
@@ -372,9 +378,10 @@
                 staff and loyal customer base. Ready to be handed over now.
               </p>
               <a
-                href="/coming-soon.html"
+                href="/pdf/deal-4.pdf"
                 class="primary-link blue"
                 title="More info"
+                target="_blank"
                 >MORE INFO</a
               >
             </div>
@@ -391,9 +398,40 @@
                 Access exclusive opportunities before they hit the market.
               </p>
               <a
-                href="/coming-soon.html"
+                href="/pdf/deal-5.pdf"
                 class="primary-link blue"
                 title="More info"
+                target="_blank"
+                >MORE INFO</a
+              >
+            </div>
+
+            <!-- Deal 6: Dubai & Portugal -->
+            <div class="deal-card premium-global">
+              <div class="deal-number">06</div>
+              <h3>Modern & Bold Variants</h3>
+
+              <p>
+                <strong>1.</strong> Dubai ✦ Portugal<br />
+                Your Next-Level Premium Deals Are Here.
+              </p>
+
+              <p>
+                <strong>2.</strong> Invest. Live. Experience.<br />
+                Curated Premium Deals from Dubai & Portugal.
+              </p>
+
+              <p>
+                <strong>3.</strong> Two Worlds of Luxury, One Exclusive
+                Access.<br />
+                Premium Opportunities from Dubai and Portugal.
+              </p>
+
+              <a
+                href="/pdf/deal-6.pdf"
+                class="primary-link blue"
+                title="More info"
+                target="_blank"
                 >MORE INFO</a
               >
             </div>
@@ -406,7 +444,6 @@
               Contact ALLinCOSTA today for detailed information about these
               premium listings.
             </p>
-            <p class="tagline"><em>We create value to serve you.</em></p>
             <a
               href="/contact.html"
               class="primary-link blue large"
@@ -510,6 +547,7 @@
                   type="text"
                   id="country"
                   name="country"
+                  required
                   placeholder="Country *"
                   aria-hidden="true"
                   style="display: none"
@@ -545,10 +583,11 @@
                   type="tel"
                   id="country"
                   name="country"
-                  placeholder="Country"
+                  required
+                  placeholder="Country *"
                 />
                 <select id="ideal_location" name="ideal_location">
-                  <option value="">location in Costa del Sol (optional)</option>
+                  <option value="">Location in Costa del Sol (optional)</option>
                   <option value="marbella">Marbella</option>
                   <option value="estepona">Estepona</option>
                   <option value="malaga">Málaga</option>
@@ -565,18 +604,6 @@
                 </select>
 
                 <!-- Count: csak Customer esetén látható és required -->
-                <div class="form-group">
-                  <label for="count"
-                    >Count <span class="required">*</span></label
-                  >
-                  <input
-                    type="number"
-                    id="count"
-                    name="count"
-                    placeholder="Count *"
-                    min="1"
-                  />
-                </div>
 
                 <div class="form-group">
                   <label>Select your individual service(s):</label>
@@ -885,6 +912,7 @@
                 </div>
               </div>
 
+              <div class="line"></div>
               <!-- GDPR -->
               <div class="form-check">
                 <input
@@ -896,7 +924,10 @@
                 />
                 <label for="gdpr"
                   >I consent to the processing of my personal data by ALLinCOSTA
-                  in accordance with the Privacy Policy. *</label
+                  in accordance
+                  <a class="mody-policy" href="/privacy-policy.html"
+                    >with the Privacy Policy</a
+                  >. *</label
                 >
               </div>
 
@@ -963,6 +994,14 @@
                   <a href="/privacy-policy.html" title="Privacy policy"
                     >Privacy policy</a
                   >
+                </li>
+                <li>
+                  <a
+                    href="/pdf/Terms and conditions.pdf"
+                    title="Privacy policy"
+                    target="_blank"
+                    >Terms and conditions
+                  </a>
                 </li>
               </ul>
             </div>
