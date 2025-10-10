@@ -268,8 +268,7 @@ mainForm.addEventListener("submit", async function (e) {
 
   // ===== CUSTOMER =====
   if (formType === "customer") {
-    const countryEl = getEl("customer_country", "country");
-    formData.country = countryEl ? countryEl.value.trim() : "";
+
     formData.ideal_location = getEl("ideal_location")?.value || "";
     formData.count = getEl("count")?.value || "";
 
@@ -279,10 +278,7 @@ mainForm.addEventListener("submit", async function (e) {
       .forEach((cb) => services.push(cb.value));
     formData.services = services;
 
-    if (!formData.count) {
-      showModal("Please fill in the Count field!", "warning");
-      return;
-    }
+
   }
 
   // ===== PARTNER =====
