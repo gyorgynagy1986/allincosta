@@ -329,7 +329,7 @@ mainForm.addEventListener("submit", async function (e) {
   // ===== API hívás =====
   try {
     const response = await fetch(
-      "http://localhost:3000/send-email-allincosta",
+      "https://email-api-wheat.vercel.app/send-email-allincosta",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
