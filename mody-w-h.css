@@ -154,7 +154,7 @@ section.list::before {
 
 .deal-card {
   background: white;
-  padding: 40px 30px;
+  padding: 40px 20px;
   border-radius: 10px;
   box-shadow: var(--shadow);
   position: relative;
@@ -209,7 +209,8 @@ section.list::before {
 
 .deal-card h3 {
   color: var(--dark);
-  margin: 1rem 0 1.25rem;
+  margin: 2rem 0 1.25rem;
+  margin-bottom: 0;
   font-size: 1.375rem;
   text-transform: uppercase;
   font-weight: 700;
@@ -365,8 +366,13 @@ section.list::before {
   }
 
   .deal-card h3 {
-    font-size: 1.125rem;
-    margin: 0.75rem 0 1rem;
+    font-size: 1.2rem !important;
+    margin-top: 1.3rem !important;
+    margin-bottom: 0rem !important;
+  }
+
+  .deal-card li {
+   font-size: 16px !important;
   }
 
   .deals-cta {
@@ -408,7 +414,6 @@ section.list::before {
   }
 }
 
-
 .section-h2 {
   font-size: 2.8rem;
 }
@@ -417,6 +422,4 @@ section.list::before {
   .section-h2 {
     font-size: 2.2rem;
   }
-  
 }
-
