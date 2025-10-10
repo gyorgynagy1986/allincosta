@@ -268,9 +268,11 @@ mainForm.addEventListener("submit", async function (e) {
 
   // ===== CUSTOMER =====
   if (formType === "customer") {
+    // ADD: country bekerül az API-ba
+    formData.country =
+      getEl("customer_country", "country")?.value?.trim() || "";
 
     formData.ideal_location = getEl("ideal_location")?.value || "";
-    formData.count = getEl("count")?.value || "";
 
     const services = [];
     document
@@ -278,7 +280,11 @@ mainForm.addEventListener("submit", async function (e) {
       .forEach((cb) => services.push(cb.value));
     formData.services = services;
 
-
+    // (Opcionális) validáció:
+    if (!formData.country) {
+      showModal("Please fill in the Country field!", "warning");
+      return;
+    }
   }
 
   // ===== PARTNER =====
